@@ -1,2 +1,2 @@
 # Shardbase
-Database with automatic Sharding on NodeJS
+Database with automatic balancing to pre-defined shards on NodeJS with simple usage.
