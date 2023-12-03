@@ -1,3 +1,4 @@
 import ShardClient from "./ShardClient"
+import ShardServer from "./ShardServer"
 
-export { ShardClient }
+export { ShardClient, ShardServer }

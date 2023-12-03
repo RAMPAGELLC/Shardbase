@@ -1,7 +1,10 @@
-const { ShardClient } = require("shardbase");
+const { ShardClient, ShardServer } = require("shardbase");
 const shards = require("./shards.json");
 
+let ShardServer = new ShardServer(0, true);
 let Shardbase = new ShardClient(shards);
+
+ShardServer.listen(443);
 
 Shardbase.select({
     limit: 1,

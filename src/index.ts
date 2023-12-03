@@ -1,1 +1,1 @@
-export { ShardClient } from './core'
+export { ShardClient, ShardServer } from './core'
