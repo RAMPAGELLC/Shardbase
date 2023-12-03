@@ -1,0 +1,1 @@
+export { ShardClient } from './core'

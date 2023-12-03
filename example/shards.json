@@ -1,0 +1,33 @@
+[
+    {
+        "id": 0,
+        "name": "SHARD-1",
+        "is_primary": true,
+        "connection": {
+            "host": "primary.example.com",
+            "database": "shardbase_primary",
+            "user": "shardbase_user",
+            "password": "secure_password69"
+        }
+    },
+    {
+        "id": 1,
+        "name": "SHARD-1",
+        "connection": {
+            "host": "shard1.example.com",
+            "database": "shardbase_shard",
+            "user": "shardbase_user",
+            "password": "secure_password69"
+        }
+    },
+    {
+        "id": 2,
+        "name": "SHARD-2",
+        "connection": {
+            "host": "shard2.example.com",
+            "database": "shardbase_shard",
+            "user": "shardbase_user",
+            "password": "secure_password69"
+        }
+    }
+]
