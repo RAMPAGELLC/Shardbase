@@ -1,6 +1,21 @@
-import { Http, err } from '../util'
-import express from 'express';
+import Shardbase from "./Shardbase";
 
-class ShardClient {
+class ShardClient extends Shardbase {
+    async insert(QueryData: JSON) {
 
+    }
+    
+    async update(QueryData: JSON) {
+
+    }
+
+    async delete(QueryData: JSON) {
+
+    }
+
+    async select(QueryData: JSON) {
+
+    }
 }
+
+export default ShardClient;

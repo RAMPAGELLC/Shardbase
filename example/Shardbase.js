@@ -1,12 +1,12 @@
-const { ShardClient, ShardServer } = require("shardbase");
+const { Shardbase, ShardClient, ShardServer } = require("shardbase");
 const shards = require("./shards.json");
+let Shardbase = new Shardbase(shards, "SECURE_API_AUTH_TOKEN")
 
-let ShardServer = new ShardServer(0, true);
-let Shardbase = new ShardClient(shards);
+let MasterShardServer = new ShardServer(shards, "SECURE_API_AUTH_TOKEN", 0, 443); // Master Shard
+let ShardServer = new ShardServer(shards, "SECURE_API_AUTH_TOKEN", 1, 443); // Shard 1
+let ShardClient = new ShardClient();
 
-ShardServer.listen(443);
-
-Shardbase.select({
+ShardClient.select({
     limit: 1,
     columns: "*",
     where: {
@@ -15,7 +15,7 @@ Shardbase.select({
     in: "users"
 });
 
-Shardbase.update({
+ShardClient.update({
     limit: 1,
     columns: {
         name: "JOHN-2"
@@ -26,7 +26,7 @@ Shardbase.update({
     in: "users"
 });
 
-Shardbase.delete({
+ShardClient.delete({
     limit: 1,
     where: {
         name: "JOHN-2"
@@ -34,7 +34,7 @@ Shardbase.delete({
     in: "users"
 });
 
-Shardbase.insert({
+ShardClient.insert({
     columns: {
         name: "JOHN-2"
     },
